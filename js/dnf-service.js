@@ -1,17 +1,17 @@
 var DnfService = {
     init: function(){
-      $('#addDnfForm').validate({
-        debug: true,
-        submitHandler: function(form) {
-          var entity = Object.fromEntries((new FormData(form)).entries());
-          DnfService.add(entity);
-        }
-      });
+      // $('#addDnfForm').validate({
+      //   debug: true,
+      //   submitHandler: function(form) {
+      //     var entity = Object.fromEntries((new FormData(form)).entries());
+      //     DnfService.add(entity);
+      //   }
+      // });
        DnfService.list();
   
     },
   
-    test: function(a, b, c){
+    submit: function(a, b, c){
       console.log("here");
       var formData = $("#addDnfForm")[0];
       var entity = Object.fromEntries((new FormData(formData)).entries());

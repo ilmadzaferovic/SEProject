@@ -1,17 +1,18 @@
 var BookService = {
   init: function(){
-    $('#addBookForm').validate({
-      debug: true,
-      submitHandler: function(form) {
-        var entity = Object.fromEntries((new FormData(form)).entries());
-        BookService.add(entity);
-      }
-    });
+    // $('#addBookForm').validate({
+    //   debug: true,
+    //   submitHandler: function(form) {
+    //     var entity = Object.fromEntries((new FormData(form)).entries());
+    //     BookService.add(entity);
+    //   }
+    // });
      BookService.list();
+     BookService.list_name();
 
   },
 
-  test: function(a, b, c){
+  submit: function(a, b, c){
     console.log("here");
     var formData = $("#addBookForm")[0];
     var entity = Object.fromEntries((new FormData(formData)).entries());
@@ -189,7 +190,7 @@ var BookService = {
     });
   },
 
- 
 
+  
   
 }

@@ -37,21 +37,19 @@
     body {
       background-image: url('https://cutewallpaper.org/28/desktop-wallpaper-read/2465028732.jpg');
     }
-
-  
-
-      
-
-     
-    
     </style>
+
+
 </head>
+
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a style="font-family: cursive;" class="navbar-brand">The Reading Journal</a>
       
       
+
+
         <div class="btn-group">
           <button type="button" class="btn btn-outline-light dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Actions
@@ -75,8 +73,8 @@
 
 
 <main>
-  <div class="container marketing" style="margin-top:100px;">
-    <!-- Three columns of text below the carousel -->
+  <div id="cards" class="container marketing" style="margin-top:100px; margin-bottom: 100px;">
+   
   
 
     <div id="book-card" class="row" >
@@ -84,7 +82,7 @@
       <div class="spinner-border" role="status">
         <span class="sr-only"></span>
       </div>
-    </div><!-- /.row -->
+    </div>
   </div>
 
 </main>
@@ -129,7 +127,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary" data-dismiss="modal" onClick="BookService.test()">Submit</button>
+          <button type="submit" class="btn btn-primary" data-dismiss="modal" onClick="BookService.submit()">Submit</button>
         </div>
       </form>
     </div>
@@ -145,7 +143,7 @@
       </div>
       <div class="modal-body">
         <input id="id" type="hidden" />
-        <!-- <input id="cover" type="file" accept="image/jpeg, image/png, image/jpg" /> -->
+        
 
       
         <div>
@@ -253,7 +251,7 @@
   </div>
 </div>
 
-<!-- CHALLENGES MODAL -->
+<!-- ADD CHALLENGES MODAL -->
 
 <div class="modal fade" id="challengeModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-xl">
@@ -267,7 +265,7 @@
             <form id="addChallengeForm">
               <div class="input-group mb-3">
                 <input name="description" type="text" class="form-control" placeholder="Challenge Description">
-                <button class="btn btn-primary" type="button" id="addChallengeButton" onClick="ChallengeService.test()">Add</button>
+                <button class="btn btn-primary" type="button" id="addChallengeButton" onClick="ChallengeService.submit()">Add</button>
               </div>
             </form>
            

@@ -10,7 +10,7 @@ var RegisterService = {
   
     },
   
-    test: function(a, b, c){
+    submit: function(a, b, c){
       console.log("here");
       var formData = $("#registerForm")[0];
       var entity = Object.fromEntries((new FormData(formData)).entries());
@@ -26,11 +26,9 @@ var RegisterService = {
         contentType: "application/json",
         dataType: "json",
         success: function(result) {
-            $("#registerModal").modal("hide");
-            $('.modal-backdrop').remove();
-            setTimeout(function(){
-              $('body').removeAttr( 'style' );
-            }, 500);
+            setTimeout(() => {
+              window.location.replace("login.html");
+            }, 1000);
         }
       });
     },

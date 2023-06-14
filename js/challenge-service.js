@@ -11,7 +11,7 @@ var ChallengeService = {
 
   },
 
-  test: function(a, b, c){
+  submit: function(a, b, c){
     console.log("here");
     var formData = $("#addChallengeForm")[0];
     var entity = Object.fromEntries((new FormData(formData)).entries());
