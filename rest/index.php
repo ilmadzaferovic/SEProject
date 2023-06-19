@@ -63,4 +63,3 @@ require_once __DIR__.'/routes/UserRoutes.php';
 
 
 Flight::start();
-?>

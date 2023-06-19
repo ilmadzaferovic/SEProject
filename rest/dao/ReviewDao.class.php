@@ -15,5 +15,3 @@ class ReviewDao extends BaseDao{
   }
 
 }
-
-?>

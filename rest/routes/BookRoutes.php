@@ -112,5 +112,3 @@ Flight::route('DELETE /book/@id', function($id){
 Flight::route('GET /book/@id/reviews', function($id){
   Flight::json(Flight::reviewService()->get_review_by_id($id));
 });
-
-?>

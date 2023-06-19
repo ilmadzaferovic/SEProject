@@ -11,5 +11,3 @@ class DnfDao extends BaseDao{
   }
 
 }
-
-?>

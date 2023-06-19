@@ -9,4 +9,3 @@ class ChallengeService extends BaseService{
   }
 
 }
-?>

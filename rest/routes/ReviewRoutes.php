@@ -101,5 +101,3 @@ Flight::route('DELETE /reviews/@id', function($id){
   Flight::reviewService()->delete($id);
   Flight::json(["message" => "deleted"]);
 });
-
-?>

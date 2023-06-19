@@ -11,5 +11,3 @@ class BookDao extends BaseDao{
   }
 
 }
-
-?>

@@ -74,6 +74,3 @@ Flight::route('POST /register', function(){
   $registrationData['password'] = md5($registrationData['password']);
   Flight::json(Flight::userDao()->add($registrationData));
 });
-
-
-?>
