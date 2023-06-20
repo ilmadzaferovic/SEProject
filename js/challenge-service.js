@@ -25,9 +25,9 @@ var ChallengeService = {
     $.ajax({
       url: "rest/challenges",
       type: "GET",
-      beforeSend: function(xhr){
-        xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
-      },
+      // beforeSend: function(xhr){
+      //   xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
+      // },
       success: function(data) {
       $("#challengeField").html("");
       var html = "";
@@ -50,7 +50,7 @@ var ChallengeService = {
     },
     error: function(XMLHttpRequest, textStatus, errorThrown) {
       toastr.error(XMLHttpRequest.responseJSON.message);
-      UserService.logout();
+      //UserService.logout();
     }
     });
   },
@@ -62,9 +62,9 @@ var ChallengeService = {
     $.ajax({
       url: "rest/challenges/"+id,
       type: "GET",
-      beforeSend: function(xhr){
-        xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
-      },
+      // beforeSend: function(xhr){
+      //   xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
+      // },
       success: function(data){
       $("#id").val(data.id);
       $("#description").val(data.description);
@@ -73,7 +73,7 @@ var ChallengeService = {
     },
     error: function(XMLHttpRequest, textStatus, errorThrown) {
       toastr.error(XMLHttpRequest.responseJSON.message);
-      UserService.logout();
+      //UserService.logout();
     },
   });
   },
@@ -82,9 +82,9 @@ var ChallengeService = {
     $.ajax({
       url: 'rest/challenges',
       type: 'POST',
-      beforeSend: function(xhr){
-        xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
-      },
+      // beforeSend: function(xhr){
+      //   xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
+      // },
       data: JSON.stringify(challenges),
       contentType: "application/json",
       dataType: "json",
@@ -94,7 +94,7 @@ var ChallengeService = {
       },
       error: function(XMLHttpRequest, textStatus, errorThrown) {
         toastr.error(XMLHttpRequest.responseJSON.message);
-        UserService.logout();
+       // UserService.logout();
       }
     });
   },
@@ -111,9 +111,9 @@ var ChallengeService = {
       url: 'rest/challenges/'+$('#id').val(),
       type: 'PUT',
       data: JSON.stringify(challenges),
-      beforeSend: function(xhr){
-        xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
-      },
+      // beforeSend: function(xhr){
+      //   xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
+      // },
       contentType: "application/json",
       dataType: "json",
       success: function(result) {
@@ -124,8 +124,8 @@ var ChallengeService = {
       },
       error: function(XMLHttpRequest, textStatus, errorThrown) {
         toastr.error(XMLHttpRequest.responseJSON.message);
-        UserService.logout();
-      }
+      //   UserService.logout();
+       }
     });
   },
 
@@ -134,16 +134,16 @@ var ChallengeService = {
     $.ajax({
       url: 'rest/challenges/'+id,
       type: 'DELETE',
-      beforeSend: function(xhr){
-        xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
-      },
+      // beforeSend: function(xhr){
+      //   xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
+      // },
       success: function(result)  {
           $("#challengeField").html('<div class="spinner-border" role="status"> <span class="sr-only"></span>  </div>');
           ChallengeService.list();
       },
       error: function(XMLHttpRequest, textStatus, errorThrown) {
         toastr.error(XMLHttpRequest.responseJSON.message);
-        UserService.logout();
+      //   UserService.logout();
       }
     });
   },

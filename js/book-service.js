@@ -17,9 +17,7 @@ var BookService = {
     $.ajax({
       url: "rest/book",
       type: "GET",
-      beforeSend: function (xhr) {
-        xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
-      },
+    
       success: function (data) {
         $("#book-card").html("");
         var html = "";
@@ -48,10 +46,7 @@ var BookService = {
         }
         $("#book-card").html(html);
       },
-      error: function (XMLHttpRequest, textStatus, errorThrown) {
-        toastr.error(XMLHttpRequest.responseJSON.message);
-        UserService.logout();
-      }
+       
     });
   },
 
@@ -60,9 +55,7 @@ var BookService = {
     $.ajax({
       url: "rest/book/" + id,
       type: "GET",
-      beforeSend: function (xhr) {
-        xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
-      },
+  
       success: function (data) {
         $("#id").val(data.id);
         $("#genre").val(data.genre);
@@ -72,10 +65,7 @@ var BookService = {
         $("#editBookModal").modal("show");
         $('.book-button').attr('disabled', false);
       },
-      error: function (XMLHttpRequest, textStatus, errorThrown) {
-        toastr.error(XMLHttpRequest.responseJSON.message);
-        UserService.logout();
-      },
+    
     });
   },
 
@@ -104,9 +94,7 @@ var BookService = {
     $.ajax({
       url: 'rest/book',
       type: 'POST',
-      beforeSend: function (xhr) {
-        xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
-      },
+    
       data: JSON.stringify(book),
       contentType: "application/json",
       dataType: "json",
@@ -119,10 +107,7 @@ var BookService = {
           $('body').removeAttr('style');
         }, 500);
       },
-      error: function (XMLHttpRequest, textStatus, errorThrown) {
-        toastr.error(XMLHttpRequest.responseJSON.message);
-        UserService.logout();
-      }
+      
     });
   },
 
@@ -140,9 +125,7 @@ var BookService = {
     $.ajax({
       url: 'rest/book/' + $('#id').val(),
       type: 'PUT',
-      beforeSend: function (xhr) {
-        xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
-      },
+    
       data: JSON.stringify(book),
       contentType: "application/json",
       dataType: "json",
@@ -156,10 +139,7 @@ var BookService = {
         }, 500);
         BookService.list(); // perf optimization
       },
-      error: function (XMLHttpRequest, textStatus, errorThrown) {
-        // toastr.error(XMLHttpRequest.responseJSON.message);
-        UserService.logout();
-      }
+      
     });
   },
 
@@ -168,17 +148,12 @@ var BookService = {
     $.ajax({
       url: 'rest/book/' + id,
       type: 'DELETE',
-      beforeSend: function (xhr) {
-        xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
-      },
+      
       success: function (result) {
         $("#book-card").html('<div class="spinner-border" role="status"> <span class="sr-only"></span>  </div>');
         BookService.list();
       },
-      error: function (XMLHttpRequest, textStatus, errorThrown) {
-        toastr.error(XMLHttpRequest.responseJSON.message);
-        UserService.logout();
-      }
+      
     });
   },
 

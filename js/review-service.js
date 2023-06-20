@@ -12,9 +12,9 @@ var ReviewService = {
     $.ajax({
       url: 'rest/reviews',
       type: 'POST',
-      beforeSend: function(xhr){
-        xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
-      },
+      // beforeSend: function(xhr){
+      //   xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
+      // },
       data: JSON.stringify(reviews),
       contentType: "application/json",
       dataType: "json",
@@ -32,8 +32,8 @@ var ReviewService = {
         
       },
       error: function(XMLHttpRequest, textStatus, errorThrown) {
-        // toastr.error(XMLHttpRequest.responseJSON.message);
-        UserService.logout();
+         toastr.error(XMLHttpRequest.responseJSON.message);
+        //UserService.logout();
       },
     });
   },
@@ -43,9 +43,9 @@ var ReviewService = {
     $.ajax({
       url: "rest/book/"+book_book_id+"/reviews",
       type: "GET",
-      beforeSend: function(xhr){
-        xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
-      },
+      // beforeSend: function(xhr){
+      //   xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
+      // },
       success: function(data) {
       var html = "";
       for(let i = 0; i < data.length; i++){
@@ -63,8 +63,8 @@ var ReviewService = {
       $("#book-review").html(html);
     },
     error: function(XMLHttpRequest, textStatus, errorThrown) {
-      // toastr.error(XMLHttpRequest.responseJSON.message);
-      UserService.logout();
+       toastr.error(XMLHttpRequest.responseJSON.message);
+      //UserService.logout();
     }
     });
 
@@ -94,16 +94,16 @@ var ReviewService = {
     $.ajax({
       url: 'rest/reviews/'+id,
       type: 'DELETE',
-      beforeSend: function(xhr){
-        xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
-      },
+      // beforeSend: function(xhr){
+      //   xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
+      // },
       success: function(result) {
       
         
       },
       error: function(XMLHttpRequest, textStatus, errorThrown) {
-        // toastr.error(XMLHttpRequest.responseJSON.message);
-        UserService.logout();
+         toastr.error(XMLHttpRequest.responseJSON.message);
+        //UserService.logout();
       }
     });
   },
@@ -113,9 +113,9 @@ var ReviewService = {
     $.ajax({
       url: "rest/reviews/"+id,
       type: "GET",
-      beforeSend: function(xhr){
-        xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
-      },
+      // beforeSend: function(xhr){
+      //   xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
+      // },
       success: function(data){
       $("#id").val(data.id);
       $("#hiddenBookId").val(bookId);
@@ -128,9 +128,9 @@ var ReviewService = {
       $('.book-review-').attr('disabled', false);
     },
     error: function(XMLHttpRequest, textStatus, errorThrown) {
-      toastr.error(XMLHttpRequest.responseJSON.message);
-      UserService.logout();
-    },
+       toastr.error(XMLHttpRequest.responseJSON.message);
+    //   UserService.logout();
+   },
   });
   },
 
@@ -148,9 +148,9 @@ var ReviewService = {
     $.ajax({
       url: 'rest/reviews/'+$('#id').val(),
       type: 'PUT',
-      beforeSend: function(xhr){
-        xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
-      },
+      // beforeSend: function(xhr){
+      //   xhr.setRequestHeader('Authorization', localStorage.getItem('token'));
+      // },
       data: JSON.stringify(reviews),
       contentType: "application/json",
       dataType: "json",
@@ -169,10 +169,10 @@ var ReviewService = {
          
           ReviewService.list_by_book_id(bookId); // perf optimization
       },
-      error: function(XMLHttpRequest, textStatus, errorThrown) {
-        toastr.error(XMLHttpRequest.responseJSON.message);
-        UserService.logout();
-      },
+       error: function(XMLHttpRequest, textStatus, errorThrown) {
+         toastr.error(XMLHttpRequest.responseJSON.message);
+      //   UserService.logout();
+       },
     });
   },
 
