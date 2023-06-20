@@ -2,19 +2,19 @@
 
 class Config {
   public static function DB_HOST() {
-    return Config::get_env("DB_HOST", "127.0.0.1");
+    return Config::get_env("DB_HOST", "bmyiipw9suhxvh8yzjvw-mysql.services.clever-cloud.com");
   }
 
   public static function DB_USERNAME() {
-    return Config::get_env("DB_USERNAME", "ilma_dzaf123");
+    return Config::get_env("DB_USERNAME", "u7onjaueqfjdads9");
   }
 
   public static function DB_PASSWORD() {
-    return Config::get_env("DB_PASSWORD", "ilmailmailma");
+    return Config::get_env("DB_PASSWORD", "xt6wOmJgCVCKOM15i7Bc");
   }
 
   public static function DB_SCHEME() {
-    return Config::get_env("DB_SCHEME", "reading_journal");
+    return Config::get_env("DB_SCHEME", "bmyiipw9suhxvh8yzjvw");
   }
 
   public static function DB_PORT() {
