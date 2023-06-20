@@ -22,7 +22,7 @@ class Config {
   }
 
   public static function JWT_SECRET() {
-    return Config::get_env("JWT_SECRET", "qfA0H7waHc");
+    return Config::get_env("JWT_SECRET", "qfA0H7waTc");
   }
 
   public static function get_env($name, $default) {
